@@ -1,3 +1,4 @@
+
 // Assignment Data
 const assignmentsData = {
     1: {
@@ -686,3 +687,44 @@ console.log('%cCode: 0910 6140', 'color: #2196f3; font-size: 16px;');
 console.log('%cCreated by Jahnavi', 'color: #e91e63; font-size: 14px; font-style: italic;');
 console.log('%c\n💡 Tip: Press Ctrl/Cmd + L to quickly open login!', 'color: #4caf50; font-size: 12px;');
 console.log('%c📋 Click on any assignment card to see detailed submission status!', 'color: #2196f3; font-size: 12px;');
+
+function submitAssignment(name, reg){
+
+let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+
+submissions.push({
+name:name,
+reg:reg,
+date:new Date().toLocaleString()
+});
+
+localStorage.setItem("submissions", JSON.stringify(submissions));
+
+alert("Assignment submitted!");
+
+}
+
+
+function showSubmissions(){
+
+let data = JSON.parse(localStorage.getItem("submissions")) || [];
+
+console.log(data);
+
+}
+
+function submitAssignment(name, reg){
+
+let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+
+submissions.push({
+name:name,
+reg:reg,
+date:new Date().toLocaleString()
+});
+
+localStorage.setItem("submissions", JSON.stringify(submissions));
+
+alert("Assignment submitted!");
+
+}
